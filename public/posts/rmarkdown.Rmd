@@ -1,0 +1,79 @@
+---
+title: "Highest level of education helps predict your political inclination."
+author: "Cesar Y. Villarreal Guzman"
+date: 2020-09-27
+abstract: "Somethings are very abstract"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r, include=FALSE}
+# Libraries used for this project
+library(cesR)
+library(labelled)
+library(tidyverse)
+library(plyr)
+library(cowplot)
+
+#### DOWLOAD AND CLEAN DATA #####
+# call 2019 CES online survey
+get_ces("ces2019_web")
+
+# convert values to factor type
+ces2019_web <- to_factor(ces2019_web)
+
+
+# Remap variables and create a new column
+ces_raw <- ces2019_web %>% select("cps19_votechoice", "cps19_education")
+original_labels <- unique(ces_raw$cps19_votechoice)
+new_labels<- c("Green", "Don't Know / Prefer no ans.", "Liberal", "Conservative",
+               "NA", "ndp",  "Another", "Bloc Qbc", "People's Party")
+ces_raw$votechoice <- mapvalues(ces_raw$cps19_votechoice, 
+                                from=original_labels, to=new_labels)
+
+# We set "Don't know/Prefer not" to NA to benefit from the is.na() function
+# when creating plots
+ces_raw$votechoice[ces_raw$votechoice == "Don't Know / Prefer no ans."] <- NA
+```
+# Introduction
+Ever since Cambridge Analytica's scandal more and more research has surfaced
+on how to predict political inclination, it seems that the era of big-data
+has completely changed how we view the world. In the search to find a "good" 
+model for predicting political inclination, one variable that keeps comming up
+is that of education. The Pew Research Center has published numerous articles in
+which they discuss the relationship between highest education level and political
+inclination. Some of the more notorious ones, come from way back in 2015 and 2016.
+Surveys were performed in order to create these articles, which differs with
+our approach.
+
+This time we are using already collected data from the 2019 Canadian Election
+Study (gcc)[http:://www.ces-eec.ca/]
+
+
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+fit <- lm(dist ~ speed, data = cars)
+fit
+```
+
+# Including Plots
+
+You can also embed plots. See Figure \@ref(fig:pie) for example:
+
+```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
+par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),
+  col = c('#0292D8', '#F7EA39', '#C4B632'),
+  init.angle = -50, border = NA
+)
+```

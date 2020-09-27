@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Cesar Yoab Villarreal Guzman">
+    <meta name="description" content="Introduction Ever since Cambridge Analytica’s scandal, more and more research has surfaced on how to predict political inclination. It seems that the era of big-data has completely changed our perspective of what is possible with data. What Cambridge Analytica showed is that is possible to create psychological profiles based on survey questions which can be used to create political strategies.
+In this investigation we look at the 2019 Canadian Election Study (CES), more specifically the online survey, to investigate how some variables obtained from this kind of surveys can be used to draw conclusions that help predict an individual political views.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+      <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Highest level of education helps predict your political inclination."/>
+<meta name="twitter:description" content="Introduction Ever since Cambridge Analytica’s scandal, more and more research has surfaced on how to predict political inclination. It seems that the era of big-data has completely changed our perspective of what is possible with data. What Cambridge Analytica showed is that is possible to create psychological profiles based on survey questions which can be used to create political strategies.
+In this investigation we look at the 2019 Canadian Election Study (CES), more specifically the online survey, to investigate how some variables obtained from this kind of surveys can be used to draw conclusions that help predict an individual political views."/>
+
+    <meta property="og:title" content="Highest level of education helps predict your political inclination." />
+<meta property="og:description" content="Introduction Ever since Cambridge Analytica’s scandal, more and more research has surfaced on how to predict political inclination. It seems that the era of big-data has completely changed our perspective of what is possible with data. What Cambridge Analytica showed is that is possible to create psychological profiles based on survey questions which can be used to create political strategies.
+In this investigation we look at the 2019 Canadian Election Study (CES), more specifically the online survey, to investigate how some variables obtained from this kind of surveys can be used to draw conclusions that help predict an individual political views." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/p1/" />
+<meta property="article:published_time" content="2020-09-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-27T00:00:00+00:00" />
+
+
+    
+      <base href="/posts/p1/">
+    
+    <title>
+  Highest level of education helps predict your political inclination. · Cesar Y.
+</title>
+
+    
+      <link rel="canonical" href="/posts/p1/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon"  sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.75.1" />
+  </head>
+  
+  
+  
+    
+  
+  <body class="colorscheme-auto"
+        onload=" twemoji.parse(document.body); "
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Cesar Y.
+    </a>
+    
+      <span id="dark-mode-toggle" class="float-right">
+        <i class="fas fa-adjust fa-fw"></i>
+      </span>
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fas fa-bars fa-fw"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/sp-es/">Español</a>
+              </li>
+            
+          
+        
+        <li class="navigation-item separator">
+          <span>|</span>
+        </li>
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Highest level of education helps predict your political inclination.</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-09-27T00:00:00Z'>
+                September 27, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              7-minute read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+        
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>Ever since Cambridge Analytica’s scandal, more and more research has surfaced
+on how to predict political inclination. It seems that the era of big-data
+has completely changed our perspective of what is possible with data.
+What Cambridge Analytica showed is that is possible to create psychological
+profiles based on survey questions which can be used to create political strategies.</p>
+<p>In this investigation we look at the 2019 Canadian Election Study
+(<a href="http://ces-eec.ca/">CES</a>), more specifically the online survey,
+to investigate how some variables obtained from this kind of surveys can be
+used to draw conclusions that help predict an individual political views.
+Specifically we will turn our attention to the variable of highest level of
+education.</p>
+<p>The Pew Research Center is one of many groups of researchers that has investigated
+this variable and its correlation with political inclination. Their conclusion,
+there is a positive correlation between highest level of education and political
+views. To be perfectly clear, and avoid a
+misunderstanding, correlation does not imply causation, i.e. your education
+is not necessarily the cause for your what political party you choose. To put it in other words,
+your education is just a variable, of many others, that as a result shape your political
+view.</p>
+<p>To draw a conclusion that supports the already existing research claims, we
+first talk about the study itself, then about our data cleaning methods and
+finally the analysis of the data itself. The last section is dedicated to
+the weaknesses of our approach and what will be our next steps.</p>
+</div>
+<div id="data-discussion" class="section level1">
+<h1>Data Discussion</h1>
+<p>Directly from the CES website “…the CES has been a rich source of data on Canadians’
+political behaviour and attitudes, measuring preferences on key political issues
+such as free trade with the US, social spending and Quebec’s place in Canada;
+political actors, such as parties, party leaders and the government; and social
+concerns, such as women’s place in the home, support for immigration, and attitudes
+toward gays and lesbians; as well as political preferences and engagement.
+These data provide an unparalleled snapshot and record of Canadian society and
+political life.” This short snippet of how the authors describe the study is
+illustrate why we chose to look at this study in the first place. Similarly to
+Cambridge Analytica this study in some sense helps to create psychological profiles
+that relate with political ideology.</p>
+<p>The CES online study, is a rectangular data-set with <span class="math inline">\(620\)</span> variables/features and
+<span class="math inline">\(37822\)</span> observations. In this discussion we only look at two variables
+“cps19_votechoice” and “cps19_education”. From the raw data the <strong>summary</strong>
+function outputs:</p>
+<pre><code>##                          cps19_votechoice
+##  Liberal Party                   :8949   
+##  Conservative Party              :8713   
+##  Don&#39;t know/ Prefer not to answer:4908   
+##  ndp                             :4328   
+##  Green Party                     :2456   
+##  (Other)                         :2210   
+##  NA&#39;s                            :6258   
+##                                                          cps19_education
+##  Bachelor&#39;s degree                                               :9192  
+##  Completed technical, community college, CEGEP, College Classique:7702  
+##  Completed secondary/ high school                                :5865  
+##  Some technical, community college, CEGEP, College Classique     :4394  
+##  Some university                                                 :3716  
+##  Master&#39;s degree                                                 :3207  
+##  (Other)                                                         :3746</code></pre>
+<p>As can be seen there is significant amount of non-responses, and even more
+significant is the amount of non-responses combined with all responses of type
+“Don’t know/ Prefer not to answer”. To proceed, we clean the data by removing
+all rows that contain either <strong>NA</strong> or “Don’t know/ Prefer not to answer”. This
+is because, for the purpose of our investigation, they don’t provide any
+information. The remaining data-set contained two variables/features and
+<span class="math inline">\(4825\)</span> observations.</p>
+<p>Next, we clustered the data into two categories,
+individuals that have at least some university education, and the ones that don’t.
+We placed individuals into the “University” category if their response was one
+of:</p>
+<ul>
+<li>Some University</li>
+<li>Bachelor’s Degree</li>
+<li>Master’s Degree</li>
+<li>Professional Degree or Doctorate</li>
+</ul>
+<p>and into “Non-University” if they have one of these responses:</p>
+<ul>
+<li>Some/Completed Technical, Community College, CEGEP, College Classique</li>
+<li>Some/Completed High School</li>
+<li>Some/Completed Elementary School</li>
+<li>No Schooling</li>
+</ul>
+<p>Then, to quickly visualize the remaining data, from each category we calculated
+the percentage of votes that went into each party. Figure <a href="#fig:highed">1</a>
+shows these results:</p>
+<div class="figure"><span id="fig:highed"></span>
+<img src="/posts/p1_files/figure-html/highed-1.png" alt="Percentage of Vote Choices Based on Education" width="1152" />
+<p class="caption">
+Figure 1: Percentage of Vote Choices Based on Education
+</p>
+</div>
+<p>Figure <a href="#fig:highed">1</a> shows some slight correlation between the “University”
+category and the liberal party and “Non-University” with the conservative party.
+What is very interesting to note is that the liberal party (also the winning party in the 2019 elections)
+takes about half of the votes combining both categories, this is somewhat different
+from research performed in the U.S. like <a href="https://www.pewresearch.org/politics/2016/04/26/a-wider-ideological-gap-between-more-and-less-educated-adults/">this</a>
+performed by the Pew Research Center or <a href="https://www.pewresearch.org/fact-tank/2016/09/15/educational-divide-in-vote-preferences-on-track-to-be-wider-than-in-recent-elections/">this one</a>
+by the same institution.</p>
+</div>
+<div id="data-analysis" class="section level1">
+<h1>Data Analysis</h1>
+<p>To outline how this data might be used for model creations we can use a very simple
+but powerful probabilistic model used in machine learning, a Naive Bayes classifier.
+What we seek is an estimate of the probabilities of
+a certain individual voting for party <span class="math inline">\(c\)</span> provided we know their highest level
+of education <span class="math inline">\(x\)</span>. Symbolically we try to compute <span class="math inline">\(p(c|x)\)</span>.
+Using Bayes Rule the class probability is given by</p>
+<p><span class="math display">\[p(c|x)=\begin{matrix}p(x,c)\\ \hline p(x)\end{matrix}=\begin{matrix}p(x|c)p(c)\\ \hline p(x)\end{matrix}\]</span>
+Following the Naive Bayes method
+we start by making the assumption that the education levels <span class="math inline">\(x_i\)</span> are <strong>conditionally independent</strong>
+given the class <span class="math inline">\(c\)</span> from the following set of classes:</p>
+<ol style="list-style-type: decimal">
+<li>Liberal Party</li>
+<li>Conservative Party</li>
+<li>Ndp</li>
+<li>Bloc Québécois</li>
+<li>Green Party</li>
+<li>People’s Party</li>
+<li>Another</li>
+</ol>
+<p>together with the two levels of education <span class="math inline">\(x_1=&quot;University&quot;\)</span> and <span class="math inline">\(x_2=&quot;Non-University\)</span>.
+To clarify, the initial assumption does not mean they are actually independent,
+we make this assumption
+because of the nice mathematical properties that follow. First we try to compute
+two parameters <span class="math inline">\(\pi_j\)</span> for <span class="math inline">\(p(c=j)\)</span> and
+<span class="math inline">\(\theta_ij\)</span> for <span class="math inline">\(p(x=i|c=j)\)</span>. These parameters are for
+the generalized version of the Bernoulli model, also called the Categorial model,
+and the regular Bernoulli model respectively. In essence this method is just a
+slight variation of the regular coin toss problem.
+The estimation of each parameter, will be done by computing their
+respective MLE’s (Maximum likelihood estimate).
+First the MLE for <span class="math inline">\(p(c=j)\)</span> is given by:
+<span class="math display">\[\hat{\pi}_j=\begin{matrix}N_j \\ \hline N\end{matrix}\]</span>
+where <span class="math inline">\(N_j\)</span> is the number of appearances of party <span class="math inline">\(j\)</span> in the data-set of size <span class="math inline">\(N\)</span>,
+and the MLE of <span class="math inline">\(p(x=i|c=j)\)</span></p>
+<p><span class="math display">\[\hat{\theta}_{ij}= \begin{matrix}N_{ij} \\ \hline N_j \end{matrix}\]</span>
+where <span class="math inline">\(N_{ij}\)</span> is the number of appearances of party <span class="math inline">\(j\)</span> with education <span class="math inline">\(i\)</span>, <span class="math inline">\(N_j\)</span>
+is as before. We can stop here because from Bayes Theorem we have that
+<span class="math display">\[p(c|x)\propto p(c)p(x|c)\]</span>
+and hence it is not necessary to compute values for <span class="math inline">\(p(x)\)</span>. Table 1 displays the
+computed values <span class="math inline">\(p(c)p(x|c)\)</span>.</p>
+<table>
+<caption><span id="tab:model">Table 1: </span>Proportional values to <span class="math inline">\(p(c|x)\)</span></caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">University</th>
+<th align="center">Non-University</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Liberal</td>
+<td align="center">0.0457</td>
+<td align="center">0.0183</td>
+</tr>
+<tr class="even">
+<td align="left">Conservative</td>
+<td align="center">0.0339</td>
+<td align="center">0.0215</td>
+</tr>
+<tr class="odd">
+<td align="left">ndp</td>
+<td align="center">0.0186</td>
+<td align="center">0.0115</td>
+</tr>
+<tr class="even">
+<td align="left">Bloc Qbc</td>
+<td align="center">0.0058</td>
+<td align="center">0.0035</td>
+</tr>
+<tr class="odd">
+<td align="left">Green Party</td>
+<td align="center">0.0113</td>
+<td align="center">0.0054</td>
+</tr>
+<tr class="even">
+<td align="left">People’s Party</td>
+<td align="center">0.0022</td>
+<td align="center">0.0016</td>
+</tr>
+<tr class="odd">
+<td align="left">Another</td>
+<td align="center">0.0011</td>
+<td align="center">0.0006</td>
+</tr>
+</tbody>
+</table>
+<p>The Naive Bayes classifier then uses Table 1 together with some input, say <span class="math inline">\(x=&quot;University&quot;\)</span>,
+and then outputs the value with highest probability, in this example it would be “Liberal Party”.
+Similarly for <span class="math inline">\(x=&quot;Non-University&quot;\)</span> the classifier would output “Conservative Party”.</p>
+<p>This model helps to illustrate that with some profile data, like
+the one in the CES study or the one collected by Cambridge Analytica,
+we can model human behavior to a certain extent even with the simplest of
+methods. More sophisticated methods yield more accurate and precise results, just
+like more data yields better results.</p>
+</div>
+<div id="weaknesses-and-next-steps" class="section level1">
+<h1>Weaknesses and Next Steps</h1>
+<p>Perhaps the most clear weakness of this analysis lies in its simplicity. Although
+there is theory surrounding what we did, we also cannot deny that this method
+is just one of many methods that could be applied to analyze this data-set.
+The biggest weakness is perhaps the lack of other methods for comparison. Some
+other methods may include other types of Bayesian Networks, Poisson regression,
+and Negative Binomial Regression.</p>
+<p>What comes next is to perhaps attempt what Cambridge Analytica successfully did,
+create a model that given some number of features, predicts the political inclination
+of an individual. To find such features one could perform some sort of PCA
+(Principal Component Analysis) to reduce the dimension of the original data-set.
+Then, depending on the size of the remaining data, we could attempt different
+machine learning methods, to create an accurate model.</p>
+<div id="references" class="section level2">
+<h2>References</h2>
+<ol style="list-style-type: decimal">
+<li>Stephenson, Laura B; Harell, Allison; Rubenson, Daniel; Loewen, Peter John, 2020, “2019 Canadian Election Study - Online Survey”, <a href="https://doi.org/10.7910/DVN/DUS88V" class="uri">https://doi.org/10.7910/DVN/DUS88V</a>, Harvard Dataverse, V1</li>
+<li>Suls, R. (2020, August 28). Educational divide in vote preferences on track to be wider than in recent elections. Retrieved September 27, 2020, from <a href="https://www.pewresearch.org/fact-tank/2016/09/15/educational-divide-in-vote-preferences-on-track-to-be-wider-than-in-recent-elections/" class="uri">https://www.pewresearch.org/fact-tank/2016/09/15/educational-divide-in-vote-preferences-on-track-to-be-wider-than-in-recent-elections/</a></li>
+<li>Ideological Gap Widens Between More, Less Educated Adults. (2020, May 30). Retrieved September 27, 2020, from <a href="https://www.pewresearch.org/politics/2016/04/26/a-wider-ideological-gap-between-more-and-less-educated-adults/" class="uri">https://www.pewresearch.org/politics/2016/04/26/a-wider-ideological-gap-between-more-and-less-educated-adults/</a></li>
+<li>Weakliem, David. (2002). The Effects of Education on Political Opinions: An International Study. International Journal for Quality in Health Care - INT J QUAL HEALTH CARE. 14. 141-157. 10.1093/ijpor/14.2.141.</li>
+<li>Boldyreva, Elena. (2018). Cambridge Analytica: Ethics And Online Manipulation With Decision-Making Process. 91-102. 10.15405/epsbs.2018.12.02.10.</li>
+<li>Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, <a href="https://doi.org/10.21105/joss.01686" class="uri">https://doi.org/10.21105/joss.01686</a></li>
+<li>Paul A. Hodgetts and Rohan Alexander (2020). cesR: Access the CES Datasets a Little Easier.. R package version 0.1.0.</li>
+<li>Joseph Larmarange (2020). labelled: Manipulating Labelled Data. R package version 2.6.0. <a href="https://CRAN.R-project.org/package=labelled" class="uri">https://CRAN.R-project.org/package=labelled</a></li>
+</ol>
+</div>
+</div>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );">
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Constantly updating website</p>
+      
+      
+        ©
+        
+        2020
+         Cesar Yoab Villarreal Guzman 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+        
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+      
+      <script src="/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+
+    <script>
+(function(f, a, t, h, o, m){
+	a[h]=a[h]||function(){
+		(a[h].q=a[h].q||[]).push(arguments)
+	};
+	o=f.createElement('script'),
+	m=f.getElementsByTagName('script')[0];
+	o.async=1; o.src=t; o.id='fathom-script';
+	m.parentNode.insertBefore(o,m)
+})(document, window, '//analytics.example.com/tracker.js', 'fathom');
+fathom('set', 'siteId', 'ABCDE');
+fathom('trackPageview');
+</script>
+
+
+    <script async defer data-domain="example.com" src="https://analytics.example.com/js/plausible.js"></script>
+
+
+  </body>
+
+</html>
