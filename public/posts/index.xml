@@ -8,13 +8,14 @@
     <language>en</language>
     <lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Highest level of education helps predict your political inclination.</title>
+      <title>Highest level of education helps to understand your political inclination.</title>
       <link>/posts/p1/</link>
       <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/p1/</guid>
-      <description>Introduction Ever since Cambridge Analytica’s scandal, more and more research has surfaced on how to predict political inclination. It seems that the era of big-data has completely changed our perspective of what is possible with data. What Cambridge Analytica showed is that is possible to create psychological profiles based on survey questions which can be used to create political strategies.
-In this investigation we look at the 2019 Canadian Election Study (CES), more specifically the online survey, to investigate how some variables obtained from this kind of surveys can be used to draw conclusions that help predict an individual political views.</description>
+      <description>Cesar Y. Villarreal Guzman
+All the code used in this post can be found here
+Abstract This investigation build on existing research that shows a positive correlation between highest level of education and political inclination. We use the Naive Bayes classification method to support the conclusion that at least some university education is correlated with an individual voting for a liberal party and a non-university education to a conservative party.</description>
     </item>
     
   </channel>

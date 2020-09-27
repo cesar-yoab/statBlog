@@ -7,8 +7,9 @@
     <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Cesar Yoab Villarreal Guzman">
-    <meta name="description" content="Introduction Ever since Cambridge Analytica’s scandal, more and more research has surfaced on how to predict political inclination. It seems that the era of big-data has completely changed our perspective of what is possible with data. What Cambridge Analytica showed is that is possible to create psychological profiles based on survey questions which can be used to create political strategies.
-In this investigation we look at the 2019 Canadian Election Study (CES), more specifically the online survey, to investigate how some variables obtained from this kind of surveys can be used to draw conclusions that help predict an individual political views.">
+    <meta name="description" content="Cesar Y. Villarreal Guzman
+All the code used in this post can be found here
+Abstract This investigation build on existing research that shows a positive correlation between highest level of education and political inclination. We use the Naive Bayes classification method to support the conclusion that at least some university education is correlated with an individual voting for a liberal party and a non-university education to a conservative party.">
     <meta name="keywords" content="blog,developer,personal">
 
     
@@ -16,13 +17,15 @@ In this investigation we look at the 2019 Canadian Election Study (CES), more sp
     
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Highest level of education helps predict your political inclination."/>
-<meta name="twitter:description" content="Introduction Ever since Cambridge Analytica’s scandal, more and more research has surfaced on how to predict political inclination. It seems that the era of big-data has completely changed our perspective of what is possible with data. What Cambridge Analytica showed is that is possible to create psychological profiles based on survey questions which can be used to create political strategies.
-In this investigation we look at the 2019 Canadian Election Study (CES), more specifically the online survey, to investigate how some variables obtained from this kind of surveys can be used to draw conclusions that help predict an individual political views."/>
+<meta name="twitter:title" content="Highest level of education helps to understand your political inclination."/>
+<meta name="twitter:description" content="Cesar Y. Villarreal Guzman
+All the code used in this post can be found here
+Abstract This investigation build on existing research that shows a positive correlation between highest level of education and political inclination. We use the Naive Bayes classification method to support the conclusion that at least some university education is correlated with an individual voting for a liberal party and a non-university education to a conservative party."/>
 
-    <meta property="og:title" content="Highest level of education helps predict your political inclination." />
-<meta property="og:description" content="Introduction Ever since Cambridge Analytica’s scandal, more and more research has surfaced on how to predict political inclination. It seems that the era of big-data has completely changed our perspective of what is possible with data. What Cambridge Analytica showed is that is possible to create psychological profiles based on survey questions which can be used to create political strategies.
-In this investigation we look at the 2019 Canadian Election Study (CES), more specifically the online survey, to investigate how some variables obtained from this kind of surveys can be used to draw conclusions that help predict an individual political views." />
+    <meta property="og:title" content="Highest level of education helps to understand your political inclination." />
+<meta property="og:description" content="Cesar Y. Villarreal Guzman
+All the code used in this post can be found here
+Abstract This investigation build on existing research that shows a positive correlation between highest level of education and political inclination. We use the Naive Bayes classification method to support the conclusion that at least some university education is correlated with an individual voting for a liberal party and a non-university education to a conservative party." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/p1/" />
 <meta property="article:published_time" content="2020-09-27T00:00:00+00:00" />
@@ -33,7 +36,7 @@ In this investigation we look at the 2019 Canadian Election Study (CES), more sp
       <base href="/posts/p1/">
     
     <title>
-  Highest level of education helps predict your political inclination. · Cesar Y.
+  Highest level of education helps to understand your political inclination. · Cesar Y.
 </title>
 
     
@@ -144,7 +147,7 @@ In this investigation we look at the 2019 Canadian Election Study (CES), more sp
     <article>
       <header>
         <div class="post-title">
-          <h1 class="title">Highest level of education helps predict your political inclination.</h1>
+          <h1 class="title">Highest level of education helps to understand your political inclination.</h1>
         </div>
         <div class="post-meta">
           <div class="date">
@@ -156,7 +159,7 @@ In this investigation we look at the 2019 Canadian Election Study (CES), more sp
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              7-minute read
+              8-minute read
             </span>
           </div>
           
@@ -169,49 +172,62 @@ In this investigation we look at the 2019 Canadian Election Study (CES), more sp
         
 
 
+<p><em>Cesar Y. Villarreal Guzman</em></p>
+<p><strong>All the code used in this post can be found <a href="https://github.com/cesar-yoab/bpost1">here</a></strong></p>
+<div id="abstract" class="section level4">
+<h4><em>Abstract</em></h4>
+<p><i>This investigation build on existing research that shows
+a positive correlation between highest level of education and political inclination.
+We use the Naive Bayes classification method to support the conclusion
+that at least some university education is correlated with an individual voting
+for a liberal party and a non-university education to a conservative party.</i></p>
+</div>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>Ever since Cambridge Analytica’s scandal, more and more research has surfaced
+<p>Ever since Cambridge Analytica’s scandal more and more research has surfaced
 on how to predict political inclination. It seems that the era of big-data
-has completely changed our perspective of what is possible with data.
-What Cambridge Analytica showed is that is possible to create psychological
-profiles based on survey questions which can be used to create political strategies.</p>
-<p>In this investigation we look at the 2019 Canadian Election Study
+has completely changed our perspective of what’s possible.
+One example is how Cambridge Analytica showed that by creating psychological
+profiles, based on survey questions, one can create
+successful political advertisement strategies.</p>
+<p>With this in mind, this investigation looks at the 2019 Canadian Election Study
 (<a href="http://ces-eec.ca/">CES</a>), more specifically the online survey,
-to investigate how some variables obtained from this kind of surveys can be
-used to draw conclusions that help predict an individual political views.
+to investigate how some variables obtained from this kind of study can be
+used to draw conclusions that help predict an individual’s political views.
 Specifically we will turn our attention to the variable of highest level of
 education.</p>
-<p>The Pew Research Center is one of many groups of researchers that has investigated
-this variable and its correlation with political inclination. Their conclusion,
+<p>The Pew Research Center is one of many groups of researchers that have
+experience investigating
+the correlation between education and politics. Their conclusion,
 there is a positive correlation between highest level of education and political
-views. To be perfectly clear, and avoid a
-misunderstanding, correlation does not imply causation, i.e. your education
-is not necessarily the cause for your what political party you choose. To put it in other words,
+views. We would like to point out that correlation does not imply causation, i.e. your education
+is not necessarily the cause for what political party you choose. That is,
 your education is just a variable, of many others, that as a result shape your political
-view.</p>
+decisions.</p>
 <p>To draw a conclusion that supports the already existing research claims, we
 first talk about the study itself, then about our data cleaning methods and
-finally the analysis of the data itself. The last section is dedicated to
+finally the analysis of the data using Naive Bayes classification methods.
+The last section is dedicated to
 the weaknesses of our approach and what will be our next steps.</p>
 </div>
 <div id="data-discussion" class="section level1">
 <h1>Data Discussion</h1>
-<p>Directly from the CES website “…the CES has been a rich source of data on Canadians’
+<p>The following short snippet writen by the CES authors illustrates why we study
+the CES data-set.
+Directly from their <a href="http://ces-eec.ca/">website</a> “…the CES has been a rich source of data on Canadians’
 political behaviour and attitudes, measuring preferences on key political issues
 such as free trade with the US, social spending and Quebec’s place in Canada;
 political actors, such as parties, party leaders and the government; and social
 concerns, such as women’s place in the home, support for immigration, and attitudes
 toward gays and lesbians; as well as political preferences and engagement.
 These data provide an unparalleled snapshot and record of Canadian society and
-political life.” This short snippet of how the authors describe the study is
-illustrate why we chose to look at this study in the first place. Similarly to
-Cambridge Analytica this study in some sense helps to create psychological profiles
-that relate with political ideology.</p>
-<p>The CES online study, is a rectangular data-set with <span class="math inline">\(620\)</span> variables/features and
+political life.” This description shows that, like Cambridge Analytica, the
+data collected helps to ‘profile’ respondents.</p>
+<p>The study, is a rectangular data-set with <span class="math inline">\(620\)</span> variables and
 <span class="math inline">\(37822\)</span> observations. In this discussion we only look at two variables
-“cps19_votechoice” and “cps19_education”. From the raw data the <strong>summary</strong>
-function outputs:</p>
+“cps19_votechoice” and “cps19_education”. From the raw data, by
+selecting such columns and piping them to the <strong>summary</strong>
+function, the resulting output is:</p>
 <pre><code>##                          cps19_votechoice
 ##  Liberal Party                   :8949   
 ##  Conservative Party              :8713   
@@ -228,14 +244,15 @@ function outputs:</p>
 ##  Some university                                                 :3716  
 ##  Master&#39;s degree                                                 :3207  
 ##  (Other)                                                         :3746</code></pre>
-<p>As can be seen there is significant amount of non-responses, and even more
-significant is the amount of non-responses combined with all responses of type
-“Don’t know/ Prefer not to answer”. To proceed, we clean the data by removing
-all rows that contain either <strong>NA</strong> or “Don’t know/ Prefer not to answer”. This
+<p>As can be seen there is significant amount of non-responses. This number is
+even bigger when combined with all responses of type
+“Don’t know/ Prefer not to answer”. Hence, to clean the data, we remove
+all rows that contain either <em>NA</em> or “Don’t know/ Prefer not to answer”, in
+both the education and vote choice columns. This
 is because, for the purpose of our investigation, they don’t provide any
-information. The remaining data-set contained two variables/features and
+information. The remaining data-set contains two variables and
 <span class="math inline">\(4825\)</span> observations.</p>
-<p>Next, we clustered the data into two categories,
+<p>We proceed by clustering the data into two categories,
 individuals that have at least some university education, and the ones that don’t.
 We placed individuals into the “University” category if their response was one
 of:</p>
@@ -245,7 +262,7 @@ of:</p>
 <li>Master’s Degree</li>
 <li>Professional Degree or Doctorate</li>
 </ul>
-<p>and into “Non-University” if they have one of these responses:</p>
+<p>and into “Non-University” if their response was:</p>
 <ul>
 <li>Some/Completed Technical, Community College, CEGEP, College Classique</li>
 <li>Some/Completed High School</li>
@@ -253,8 +270,8 @@ of:</p>
 <li>No Schooling</li>
 </ul>
 <p>Then, to quickly visualize the remaining data, from each category we calculated
-the percentage of votes that went into each party. Figure <a href="#fig:highed">1</a>
-shows these results:</p>
+the percentage of votes that went into each party and created a plot for
+each category resulting in Figure <a href="#fig:highed">1</a>:</p>
 <div class="figure"><span id="fig:highed"></span>
 <img src="/posts/p1_files/figure-html/highed-1.png" alt="Percentage of Vote Choices Based on Education" width="1152" />
 <p class="caption">
@@ -263,20 +280,19 @@ Figure 1: Percentage of Vote Choices Based on Education
 </div>
 <p>Figure <a href="#fig:highed">1</a> shows some slight correlation between the “University”
 category and the liberal party and “Non-University” with the conservative party.
-What is very interesting to note is that the liberal party (also the winning party in the 2019 elections)
+It is very interesting to point out that the liberal party (also the winning party in the 2019 elections)
 takes about half of the votes combining both categories, this is somewhat different
 from research performed in the U.S. like <a href="https://www.pewresearch.org/politics/2016/04/26/a-wider-ideological-gap-between-more-and-less-educated-adults/">this</a>
-performed by the Pew Research Center or <a href="https://www.pewresearch.org/fact-tank/2016/09/15/educational-divide-in-vote-preferences-on-track-to-be-wider-than-in-recent-elections/">this one</a>
-by the same institution.</p>
+or <a href="https://www.pewresearch.org/fact-tank/2016/09/15/educational-divide-in-vote-preferences-on-track-to-be-wider-than-in-recent-elections/">this one</a>
+performed by the Pew Research Center.</p>
 </div>
 <div id="data-analysis" class="section level1">
 <h1>Data Analysis</h1>
-<p>To outline how this data might be used for model creations we can use a very simple
-but powerful probabilistic model used in machine learning, a Naive Bayes classifier.
-What we seek is an estimate of the probabilities of
+<p>To display how this data might be used to create a model we can use a very simple
+but powerful probabilistic model commonly used in machine learning, a Naive Bayes classifier.
+What we seek is an estimate of the probability of
 a certain individual voting for party <span class="math inline">\(c\)</span> provided we know their highest level
-of education <span class="math inline">\(x\)</span>. Symbolically we try to compute <span class="math inline">\(p(c|x)\)</span>.
-Using Bayes Rule the class probability is given by</p>
+of education <span class="math inline">\(x\)</span>. Symbolically we try to compute <span class="math inline">\(p(c|x)\)</span>, which by Bayes Rule is:</p>
 <p><span class="math display">\[p(c|x)=\begin{matrix}p(x,c)\\ \hline p(x)\end{matrix}=\begin{matrix}p(x|c)p(c)\\ \hline p(x)\end{matrix}\]</span>
 Following the Naive Bayes method
 we start by making the assumption that the education levels <span class="math inline">\(x_i\)</span> are <strong>conditionally independent</strong>
@@ -295,11 +311,11 @@ To clarify, the initial assumption does not mean they are actually independent,
 we make this assumption
 because of the nice mathematical properties that follow. First we try to compute
 two parameters <span class="math inline">\(\pi_j\)</span> for <span class="math inline">\(p(c=j)\)</span> and
-<span class="math inline">\(\theta_ij\)</span> for <span class="math inline">\(p(x=i|c=j)\)</span>. These parameters are for
-the generalized version of the Bernoulli model, also called the Categorial model,
+<span class="math inline">\(\theta_{ij}\)</span> for <span class="math inline">\(p(x=i|c=j)\)</span>. These parameters are for
+Categorical model
 and the regular Bernoulli model respectively. In essence this method is just a
 slight variation of the regular coin toss problem.
-The estimation of each parameter, will be done by computing their
+The estimation of each parameter will be done by computing their
 respective MLE’s (Maximum likelihood estimate).
 First the MLE for <span class="math inline">\(p(c=j)\)</span> is given by:
 <span class="math display">\[\hat{\pi}_j=\begin{matrix}N_j \\ \hline N\end{matrix}\]</span>
@@ -307,12 +323,12 @@ where <span class="math inline">\(N_j\)</span> is the number of appearances of p
 and the MLE of <span class="math inline">\(p(x=i|c=j)\)</span></p>
 <p><span class="math display">\[\hat{\theta}_{ij}= \begin{matrix}N_{ij} \\ \hline N_j \end{matrix}\]</span>
 where <span class="math inline">\(N_{ij}\)</span> is the number of appearances of party <span class="math inline">\(j\)</span> with education <span class="math inline">\(i\)</span>, <span class="math inline">\(N_j\)</span>
-is as before. We can stop here because from Bayes Theorem we have that
+is as before. It is not necessary to compute values for <span class="math inline">\(p(x)\)</span> since
 <span class="math display">\[p(c|x)\propto p(c)p(x|c)\]</span>
-and hence it is not necessary to compute values for <span class="math inline">\(p(x)\)</span>. Table 1 displays the
-computed values <span class="math inline">\(p(c)p(x|c)\)</span>.</p>
+Table 1 displays the
+computed values for <span class="math inline">\(p(c)p(x|c)\)</span>.</p>
 <table>
-<caption><span id="tab:model">Table 1: </span>Proportional values to <span class="math inline">\(p(c|x)\)</span></caption>
+<caption><span id="tab:model">Table 1: </span>Computed values of <span class="math inline">\(p(c)p(x|c)\)</span></caption>
 <thead>
 <tr class="header">
 <th align="left"></th>
@@ -363,24 +379,24 @@ and then outputs the value with highest probability, in this example it would be
 Similarly for <span class="math inline">\(x=&quot;Non-University&quot;\)</span> the classifier would output “Conservative Party”.</p>
 <p>This model helps to illustrate that with some profile data, like
 the one in the CES study or the one collected by Cambridge Analytica,
-we can model human behavior to a certain extent even with the simplest of
-methods. More sophisticated methods yield more accurate and precise results, just
-like more data yields better results.</p>
+we can model human behavior to a certain extent, even with the simplest of
+methods. More sophisticated methods yield more accurate results, just
+like more data similarly leads to better results.</p>
 </div>
 <div id="weaknesses-and-next-steps" class="section level1">
 <h1>Weaknesses and Next Steps</h1>
 <p>Perhaps the most clear weakness of this analysis lies in its simplicity. Although
 there is theory surrounding what we did, we also cannot deny that this method
 is just one of many methods that could be applied to analyze this data-set.
-The biggest weakness is perhaps the lack of other methods for comparison. Some
+The biggest weakness is then the lack of other methods for comparison. Some
 other methods may include other types of Bayesian Networks, Poisson regression,
 and Negative Binomial Regression.</p>
-<p>What comes next is to perhaps attempt what Cambridge Analytica successfully did,
-create a model that given some number of features, predicts the political inclination
-of an individual. To find such features one could perform some sort of PCA
+<p>What comes next is to attempt what Cambridge Analytica successfully did,
+create a model that given some number of features, predicts political inclination.
+To find such features one could perform some sort of PCA
 (Principal Component Analysis) to reduce the dimension of the original data-set.
-Then, depending on the size of the remaining data, we could attempt different
-machine learning methods, to create an accurate model.</p>
+Then, depending on the size of the remaining data, several
+machine learning methods and deep learning methods can be applied.</p>
 <div id="references" class="section level2">
 <h2>References</h2>
 <ol style="list-style-type: decimal">
@@ -416,7 +432,7 @@ machine learning methods, to create an accurate model.</p>
             return;
         }
         var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.src = '//' + "CYVG" + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
