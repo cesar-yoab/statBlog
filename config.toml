@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "Cesar Y."
+title = "CYVG."
 
 theme = "hugo-coder"
 
@@ -16,8 +16,8 @@ pygmentscodefencesguesssyntax = true
 disqusShortname = "CYVG"
 math = true
 [params]
-    author = "Cesar Yoab Villarreal Guzman"
-    description = "Cesar Villarreal's personal website"
+    author = "CYVG"
+    description = "Cesar's personal website"
     keywords = "blog,developer,personal"
     info = "Software Developer, Data Scientist and Designer"
     avatarurl = "images/avatar.jpg"
@@ -116,9 +116,9 @@ math = true
         title = "Cesar Y."
 
         [languages.sp-es.params]
-            author = "Cesar Y. Villarreal G."
+            author = "CYVG"
             info = "Desarrollador de Software, Cientifico de Datos y Diseñador"
-            description = "Sítio personal de Cesar Y. Villarreal Guzman"
+            description = "Sítio personal de Cesar"
             keywords = "blog,diseñador,programador"
             footercontent = "En constante actualizacion."
 
