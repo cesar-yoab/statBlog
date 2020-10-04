@@ -85,10 +85,10 @@ the weaknesses of our approach and what will be our next steps.
 
 # Data Discussion
 
-The following short snippet writen by the CES authors illustrates why we study
+The following short snippet written by the CES authors illustrates why we study
 the CES data-set.
 Directly from their [website](http://ces-eec.ca/) "...the CES has been a rich source of data on Canadians' 
-political behaviour and attitudes, measuring preferences on key political issues 
+political behavior and attitudes, measuring preferences on key political issues 
 such as free trade with the US, social spending and Quebec’s place in Canada; 
 political actors, such as parties, party leaders and the government; and social 
 concerns, such as women’s place in the home, support for immigration, and attitudes 
