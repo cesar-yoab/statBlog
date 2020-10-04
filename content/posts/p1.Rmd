@@ -45,7 +45,7 @@ ces_raw <- ces_raw[ces_raw$cps19_education != "Don't know/ Prefer not to answer"
 N <- length(ces_raw$votechoice)
 ```
 #### _Abstract_
-<i>This investigation build on existing research that shows
+<i>This investigation builds on existing research that shows
 a positive correlation between highest level of education and political inclination.
 We use the Naive Bayes classification method to support the conclusion 
 that at least some university education is correlated with an individual voting
@@ -53,10 +53,10 @@ for a liberal party and a non-university education to a conservative party.</i>
 
 
 # Introduction
-Ever since Cambridge Analytica's scandal more and more research has surfaced
+Ever since Cambridge Analytica's scandal, more and more research has surfaced
 on how to predict political inclination. It seems that the era of big-data
 has completely changed our perspective of what's possible.
-One example is how Cambridge Analytica showed that by creating psychological
+One example, as mentioned, is how Cambridge Analytica showed that by creating psychological
 profiles, based on survey questions, one can create 
 successful political advertisement strategies.
 
@@ -107,9 +107,9 @@ function, the resulting output is:
 summary(ces2019_web[c("cps19_votechoice", "cps19_education")])
 ```
 
-As can be seen there is significant amount of non-responses. This number is 
+As can be seen there is a significant amount of non-responses. This number is 
 even bigger when combined with all responses of type
-"Don't know/ Prefer not to answer". Hence, to clean the data, we remove
+"Don't know/ Prefer not to answer". To clean the data, we decided to remove
 all rows that contain either _NA_ or "Don't know/ Prefer not to answer", in 
 both the education and vote choice columns. This
 is because, for the purpose of our investigation, they don't provide any
@@ -133,9 +133,8 @@ and into "Non-University" if their response was:
 * Some/Completed Elementary School
 * No Schooling
 
-Then, to quickly visualize the remaining data, from each category we calculated
-the percentage of votes that went into each party and created a plot for
-each category resulting in Figure \@ref(fig:highed):
+Then, to visualize the remaining data, from each category we calculated
+the percentage of votes that went into each party and created a plot resulting in Figure \@ref(fig:highed):
 
 ```{r highed, fig.cap='Percentage of Vote Choices Based on Education', echo=FALSE, warning=FALSE, fig.height = 7, fig.width = 12}
 # University Education
