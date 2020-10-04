@@ -53,7 +53,7 @@ for a liberal party and a non-university education to a conservative party.</i>
 
 
 # Introduction
-Ever since Cambridge Analytica's scandal, more and more research has surfaced
+Ever since Cambridge Analytica's scandal more and more research has surfaced
 on how to predict political inclination. It seems that the era of big-data
 has completely changed our perspective of what's possible.
 One example, as mentioned, is how Cambridge Analytica showed that by creating psychological
